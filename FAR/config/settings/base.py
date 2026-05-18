@@ -24,6 +24,8 @@ INSTALLED_APPS = [
     'apps.setup',
     'apps.reporting',
     'apps.workstations',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -57,19 +59,40 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'far',
-        'USER': 'may',
-        'PASSWORD': 'May@B12S0ft!',
-        'HOST': 'bizsoft.southeastasia.cloudapp.azure.com',  
-        'PORT': '3306',  
+        'USER': 'root', 
+        'PASSWORD': 'root123',
+        'HOST': '172.16.0.9',
+        'PORT': '3307',   
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            }
+        }
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'far',
+#         'USER': 'may',
+#         'PASSWORD': 'May@B12S0ft!',
+#         'HOST': 'bizsoft.southeastasia.cloudapp.azure.com',  
+#         'PORT': '3306',  
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             }
+#     }
+# }
+
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
