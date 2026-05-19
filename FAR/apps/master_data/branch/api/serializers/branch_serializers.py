@@ -14,21 +14,21 @@ class BranchSerializer(serializers.ModelSerializer):
         model = Branch
         fields = "__all__"
 
-    def validate_branch_code(self, value): 
-        return validate_code_pattern( 
-            value=value, 
-            pattern=r"^[A-Z0-9\-_]+$", 
-            field_label="Branch code", 
-            )
+    # def validate_branch_code(self, value): 
+    #     return validate_code_pattern( 
+    #         value=value, 
+    #         pattern=r"^[A-Z0-9\-_]+$", 
+    #         field_label="Branch code", 
+    #         )
     
-    def validate_branch_name(self, value): 
-        value = trim_text(value) 
-        if not value: 
-            raise serializers.ValidationError("Branch name is required.") 
-        return value
+    # def validate_branch_name(self, value): 
+    #     value = trim_text(value) 
+    #     if not value: 
+    #         raise serializers.ValidationError("Branch name is required.") 
+    #     return value
     
-    def validate_city(self, value): 
-        return trim_text(value)
+    # def validate_city(self, value): 
+    #     return trim_text(value)
     
     
     
