@@ -23,6 +23,13 @@ INSTALLED_APPS = [
     'apps.setup',
     'apps.reporting',
     'apps.workstations',
+    'apps.master_data.custodian',
+    'apps.master_data.currency',
+    'apps.master_data.country',
+    'apps.master_data.department',
+    'apps.master_data.location',
+    'apps.master_data.branch',
+    
     
     
 ]
