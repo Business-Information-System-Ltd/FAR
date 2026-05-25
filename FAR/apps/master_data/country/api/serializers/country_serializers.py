@@ -3,7 +3,7 @@ from apps.master_data.currency.models.currency_models import Currency
 from apps.master_data.country.models.country_models import Country
 from apps.common.validators.validators import (
      uppercase_text, 
-     validate_code_pattern, 
+     
      validate_country_code, )
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,6 +16,6 @@ class CountrySerializer(serializers.ModelSerializer):
     def validate_country_name(self, value): 
         value = uppercase_text(value) 
         if not value: 
-            raise serializers.ValidationError("Branch name is required.") 
+            raise serializers.ValidationError("Country name is required.") 
         return value
     
