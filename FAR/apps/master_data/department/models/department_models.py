@@ -3,12 +3,9 @@ from django.db import models
 class Department(models.Model):
     
     class DepartmentType(models.TextChoices):
-        HR = 'HR', 'HR'
-        IT = 'IT', 'IT'
-        FINANCE = 'FINANCE', 'Finance'
-        SALES = 'SALES', 'Sales'
-        MARKETING = 'MARKETING', 'Marketing'
+       
         OPERATIONS = 'OPERATIONS', 'Operations'
+        SUPPORT = 'SUPPORT','Support'
 
     department_id = models.AutoField(primary_key=True)
     

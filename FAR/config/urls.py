@@ -24,5 +24,10 @@ urlpatterns = [
     path('api/far/v1/', include([
         path('custodians/', include ('apps.master_data.custodian.api.urls')),
         path('currencies/', include ('apps.master_data.currency.api.urls')),
+        path('branches/', include ('apps.master_data.branch.api.urls')),
+        path('departments/', include ('apps.master_data.department.api.urls')),
+        path('locations/', include ('apps.master_data.location.api.urls')),
+        path('countries/', include ('apps.master_data.country.api.urls')),
+        
     ])),
 ]

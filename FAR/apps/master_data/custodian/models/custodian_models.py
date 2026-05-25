@@ -1,9 +1,13 @@
 from django.db import models
+from apps.master_data.branch.models.branch_models import Branch 
+from apps.master_data.department.models.department_models import Department
 
 class Custodian(models.Model):
+    
+    department = models.ForeignKey('department.Department', on_delete=models.CASCADE, null=True,  blank=True)
+    branch = models.ForeignKey('branch.Branch', on_delete=models.CASCADE, null=True, blank=True)
+    
     custodian_id = models.AutoField(primary_key=True)
-    # branch = models.ForeignKey(Branch, on_delete=models.CASCADE, db_column='branch_id')
-    # dept = models.ForeignKey(Department, on_delete=models.CASCADE, db_column='dept_id')
     custodian_code = models.CharField(max_length=10)
     custodian_name = models.CharField(max_length=100,null = False)
     custodian_type = models.CharField(max_length=50)
@@ -16,8 +20,25 @@ class Custodian(models.Model):
     created_by = models.CharField(max_length=100)
     updated_by = models.CharField(max_length=100)
 
-    class Meta:
+class Meta:
         db_table = 'custodian'
+        
+        def __str__(self):
+            return self.custodian_name
+        
+        created_by = models.ForeignKey(
+        'auth.User',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,      
+        editable=False   
+    )
+        updated_by = models.ForeignKey(
+        'auth.User',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,      
+        editable=False   
+    )
 
-    def __str__(self):
-        return self.custodian_name
+        

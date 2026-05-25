@@ -24,6 +24,4 @@ class Currency(models.Model):
 
     class Meta:
         db_table = 'currency'
-
-    def __str__(self):
-        return self.currency_name
+        app_label = 'currency'

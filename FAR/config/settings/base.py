@@ -23,13 +23,20 @@ INSTALLED_APPS = [
     'apps.setup',
     'apps.reporting',
     'apps.workstations',
+    'apps.master_data.custodian',
+    'apps.master_data.currency',
+    'apps.master_data.branch',
+    'apps.master_data.department',
+    'apps.master_data.location',  
+    'apps.master_data.country',
     
     
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -99,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
-
+CORS_ALLOW_ALL_ORIGINS = True
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -168,7 +175,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['*']
 
 
 # # Application definition
