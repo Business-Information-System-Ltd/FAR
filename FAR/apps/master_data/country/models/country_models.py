@@ -1,8 +1,10 @@
 from  django.db import models
+
+
 class Country(models.Model):
     country_id = models.AutoField(primary_key=True)
     
-    # --- FOREIGN KEY TO CURRENCY ---
+   
     # currency = models.ForeignKey(
     #     Currency, 
     #     on_delete=models.SET_NULL, 
