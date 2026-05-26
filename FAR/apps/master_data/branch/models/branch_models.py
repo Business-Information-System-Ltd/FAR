@@ -1,5 +1,5 @@
 from django.db import models
-<<<<<<< HEAD
+
 from apps.master_data.country.models.country_models import Country
 
 class Branch(models.Model):
@@ -27,7 +27,7 @@ class Branch(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     # Audit tracking
-=======
+
 
 
 class Branch(models.Model):
@@ -56,16 +56,14 @@ class Branch(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
->>>>>>> 2e4202d6465e010ac92d5bd480173c8091e90774
     created_by = models.CharField(max_length=100, null=True, blank=True)
     updated_by = models.CharField(max_length=100, null=True, blank=True)
 
     class Meta:
-<<<<<<< HEAD
+
         db_table = 'branch'  # Ensures the table name matches your SQL exactly
-=======
-        db_table = "branch"
->>>>>>> 2e4202d6465e010ac92d5bd480173c8091e90774
+
+
 
     def __str__(self):
         return self.branch_name

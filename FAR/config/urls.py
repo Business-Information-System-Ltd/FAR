@@ -14,11 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-<<<<<<< HEAD
-=======
-from django.contrib import admin
-from django.urls import path, include
->>>>>>> 2e4202d6465e010ac92d5bd480173c8091e90774
+
 
 from django.contrib import admin
 from django.urls import path,include
@@ -26,22 +22,11 @@ from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-    path('api/far/v1/', include([
-        path('custodians/', include ('apps.master_data.custodian.api.urls')),
-        path('currencies/', include ('apps.master_data.currency.api.urls')),
-        path('countries/', include ('apps.master_data.country.api.urls')),
-        path('locations/', include ('apps.master_data.location.api.urls')),
-        path('departments/', include ('apps.master_data.department.api.urls')),
-        path('branches/', include ('apps.master_data.branch.api.urls')),
 
-
-
-=======
     path('api/far/meta/', include([
         path('branches/', include('apps.master_data.branch.api.urls')),
         path('countries/', include('apps.master_data.country.api.urls')),
         path('currencies/', include('apps.master_data.currency.api.urls')),
->>>>>>> 2e4202d6465e010ac92d5bd480173c8091e90774
+
     ])),
 ]

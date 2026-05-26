@@ -67,11 +67,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-<<<<<<< HEAD
 
 
 
-=======
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #             }
 #     }
 # }
->>>>>>> 2e4202d6465e010ac92d5bd480173c8091e90774
+
 
 DATABASES = {
     'default': {
