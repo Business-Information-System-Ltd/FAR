@@ -22,12 +22,19 @@ from rest_framework.routers import DefaultRouter
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/far/v1/', include([
-        path('custodians/', include ('apps.master_data.custodian.api.urls')),
+        path('branches/', include ('apps.master_data.branch.api.urls')),
+        path('countries/', include ('apps.master_data.country.api.urls')),
         path('currencies/', include ('apps.master_data.currency.api.urls')),
+<<<<<<< HEAD
         path('branches/', include ('apps.master_data.branch.api.urls')),
         path('departments/', include ('apps.master_data.department.api.urls')),
         path('locations/', include ('apps.master_data.location.api.urls')),
         path('countries/', include ('apps.master_data.country.api.urls')),
         
+=======
+        path('custodians/', include ('apps.master_data.custodian.api.urls')),
+        path('departments/', include ('apps.master_data.department.api.urls')),
+        path('locations/', include ('apps.master_data.location.api.urls')),
+>>>>>>> bc5b9b977497e63123828f82cb77dcc39ea37a8e
     ])),
 ]

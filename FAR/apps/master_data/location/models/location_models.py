@@ -10,7 +10,8 @@ class Location(models.Model):
         BRANCH = 'BRANCH', 'Branch'
 
     location_id = models.AutoField(primary_key=True)
-    country_id = models.IntegerField() 
+   # models.py
+    country_id = models.IntegerField(null=True, blank=True) 
     
     parent_location = models.ForeignKey(
         'self', 
