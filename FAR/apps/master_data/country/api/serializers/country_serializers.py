@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-from rest_framework import serializers
-from apps.master_data.country.models.country_models import Country
-class CountrySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Country
-        fields = '__all__'
-=======
+
 from rest_framework import serializers 
 from apps.master_data.currency.models.currency_models import Currency
 from apps.master_data.country.models.country_models import Country
@@ -27,4 +20,4 @@ class CountrySerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Country name is required.") 
         return value
     
->>>>>>> 2e4202d6465e010ac92d5bd480173c8091e90774
+
