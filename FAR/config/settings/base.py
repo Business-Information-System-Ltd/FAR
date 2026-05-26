@@ -18,12 +18,20 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'apps.common',
-    'apps.master_data',
     'apps.reference',
     'apps.integrations',
     'apps.setup',
     'apps.reporting',
     'apps.workstations',
+    'apps.master_data.custodian',
+    'apps.master_data.currency',
+    'apps.master_data.country',
+    'apps.master_data.department',
+    'apps.master_data.location',
+    'apps.master_data.branch',
+    
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -57,19 +65,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'far',
-#         'USER': 'may',
-#         'PASSWORD': 'May@B12S0ft!',
-#         'HOST': 'bizsoft.southeastasia.cloudapp.azure.com',  
-#         'PORT': '3306',  
-#         'OPTIONS': {
-#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-#             }
-#     }
-# }
+
+
+
 
 DATABASES = {
     'default': {
@@ -84,6 +82,23 @@ DATABASES = {
         }
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'far',
+#         'USER': 'may',
+#         'PASSWORD': 'May@B12S0ft!',
+#         'HOST': 'bizsoft.southeastasia.cloudapp.azure.com',  
+#         'PORT': '3306',  
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             }
+#     }
+# }
+
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
