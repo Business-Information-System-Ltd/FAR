@@ -67,9 +67,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+<<<<<<< HEAD
 
 
 
+=======
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'far',
+#         'USER': 'may',
+#         'PASSWORD': 'May@B12S0ft!',
+#         'HOST': 'bizsoft.southeastasia.cloudapp.azure.com',  
+#         'PORT': '3306',  
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             }
+#     }
+# }
+>>>>>>> 2e4202d6465e010ac92d5bd480173c8091e90774
 
 DATABASES = {
     'default': {
