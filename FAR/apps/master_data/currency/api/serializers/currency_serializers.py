@@ -1,21 +1,33 @@
-<<<<<<< HEAD
+# from rest_framework import serializers 
+# # from apps.master_data.branch.models.branch_models import Branch
+# from apps.master_data.currency.models.currency_models import Currency
+
+# class CurrencySerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Currency
+#         fields = "__all__"
+
 
 from rest_framework import serializers 
-# from apps.master_data.branch.models.branch_models import Branch
 from apps.master_data.currency.models.currency_models import Currency
 
-=======
-from rest_framework import serializers
-from apps.master_data.currency.models import Currency
->>>>>>> c45243217a8bad0bf81b22554dcaf8f8649bfa16
+from apps.common.validators.validators import (
+    validate_currency_code,
+    validate_currency_name,
+)
 
-class CurrencySerializer(serializers.ModelSerializer):
+class CurrencySerializer(serializers.ModelSerializer): 
+
     class Meta:
         model = Currency
-<<<<<<< HEAD
-
         fields = "__all__"
 
-=======
-        fields = '__all__'
->>>>>>> c45243217a8bad0bf81b22554dcaf8f8649bfa16
+    def validate_currency_code(self, value): 
+
+        return validate_currency_code(value, required=True)
+    
+    def validate_currency_name(self, value): 
+        return validate_currency_name(value, required=True)
+
+    def create(self, validated_data):
+        return Currency.objects.create(**validated_data)

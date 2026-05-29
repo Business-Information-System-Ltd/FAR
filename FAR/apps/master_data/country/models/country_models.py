@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 from django.db import models
 from apps.master_data.currency.models.currency_models import Currency
@@ -33,14 +33,12 @@ class Country(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-=======
+
 from  django.db import models
-<<<<<<< HEAD
-from apps.master_data.currency.models.currency_models import Currency
-=======
 
 
->>>>>>> 5bedb4fc78dd79be22858d46885bd0e4d45a6d72
+
+
 class Country(models.Model):
     country_id = models.AutoField(primary_key=True)
     
@@ -68,21 +66,13 @@ class Country(models.Model):
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
->>>>>>> c45243217a8bad0bf81b22554dcaf8f8649bfa16
+
     created_by = models.CharField(max_length=100, null=True, blank=True)
     updated_by = models.CharField(max_length=100, null=True, blank=True)
 
     class Meta:
-<<<<<<< HEAD
 
-
-        db_table = "country"
-
-    def __str__(self):
-        return self.country_name
-
-=======
         db_table = 'country'
     def __str__(self):
         return self.country_name
->>>>>>> c45243217a8bad0bf81b22554dcaf8f8649bfa16
+

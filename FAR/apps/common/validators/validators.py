@@ -4,6 +4,7 @@ from typing import Optional, Union
  
 from rest_framework import serializers
 
+
 def trim_text(value: Optional[str]) -> Optional[str]:
     """ Strip leading and trailing spaces from a string. Returns the original value if it is None.
     """ 
@@ -15,7 +16,7 @@ def trim_text(value: Optional[str]) -> Optional[str]:
 
 def uppercase_text(value: Optional[str]) -> Optional[str]: 
     """ Convert text to uppercase. Returns the original value if it is None. 
-    """    
+    """ 
     if value is None: 
         return value 
     if not isinstance(value, str): 
@@ -43,9 +44,9 @@ def validate_code_pattern(
         if not value: 
             raise serializers.ValidationError(f"{field_label} is required.") 
         if not re.match(pattern, value): 
-            raise serializers.ValidationError( f"{field_label} format is invalid." ) 
+            raise serializers.ValidationError(f"{field_label} format is invalid.") 
         return value
-    
+
 def validate_country_code(value: Optional[str], required: bool = False) -> Optional[str]: 
     """ Validate ISO-like 3-letter country code, e.g. MMR, THA, SGP. 
     """ 
@@ -56,4 +57,48 @@ def validate_country_code(value: Optional[str], required: bool = False) -> Optio
         return value 
     if not re.match(r"^[A-Z]{3}$", value): 
         raise serializers.ValidationError( "Country code must be a 3-letter uppercase code, such as MMR." ) 
+    return value
+
+def validate_currency_code(value: Optional[str], required: bool = False) -> Optional[str]: 
+    """ Validate ISO 3-letter currency code, e.g. MMK, USD, SGD. 
+    """ 
+    value = trim_upper_text(value) 
+    if not value: 
+        if required: 
+            raise serializers.ValidationError("Currency code is required.") 
+        return value 
+    if not re.match(r"^[A-Z]{3}$", value): 
+        raise serializers.ValidationError("Currency code must be a 3-letter uppercase code, such as MMK.") 
+    return value
+
+
+def validate_currency_name(value: Optional[str], required: bool = False) -> Optional[str]: 
+    """ Validate Currency Name field. e.g. Myanmar Kyat, United States Dollar.
+    """ 
+    value = trim_text(value) 
+    if not value: 
+        if required: 
+            raise serializers.ValidationError("Currency name is required.") 
+        return value 
+    return value
+
+def validate_custodian_code(value: str) -> str:
+    """ Validate Custodian Code field (e.g., EMP-001, EMP-002).
+    Allows uppercase letters, numbers, hyphen, and underscore.
+    """
+    return validate_code_pattern(
+        value=value,
+        pattern=r"^[A-Z0-9\-_]+$",
+        field_label="Custodian code",
+    )
+
+
+def validate_custodian_name(value: Optional[str], required: bool = True) -> Optional[str]:
+    """ Validate Custodian Name field (e.g., U Aung Aung).
+    """
+    value = trim_text(value)
+    if not value:
+        if required:
+            raise serializers.ValidationError("Custodian name is required.")
+        return value
     return value
