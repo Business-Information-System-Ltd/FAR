@@ -1,15 +1,16 @@
 from  django.db import models
+from apps.master_data.currency.models.currency_models import Currency
 class Country(models.Model):
     country_id = models.AutoField(primary_key=True)
     
-#FOREIGN KEY TO app_name.Currency
-   # currency = models.ForeignKey(
-        ##Currency, 
-         #on_delete=models.SET_NULL, 
-         #null=True, 
-         #blank=True,
-         #elated_name='countries'
-     #)
+
+    currency = models.ForeignKey(
+        Currency, 
+         on_delete=models.CASCADE, 
+         null=True, 
+         blank=True,
+         related_name='countries' 
+    )
     
     country_code = models.CharField(max_length=3)
     country_name = models.CharField(max_length=100)
@@ -31,3 +32,5 @@ class Country(models.Model):
 
     class Meta:
         db_table = 'country'
+    def __str__(self):
+        return self.country_name

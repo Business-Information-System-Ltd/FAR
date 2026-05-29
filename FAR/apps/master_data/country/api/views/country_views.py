@@ -6,4 +6,4 @@ class CountryViewSet(viewsets.ModelViewSet):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
 # Create your views here.
-
+ 
