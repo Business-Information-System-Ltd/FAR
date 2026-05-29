@@ -25,10 +25,20 @@ INSTALLED_APPS = [
     'apps.workstations',
     'apps.master_data.custodian',
     'apps.master_data.currency',
+<<<<<<< HEAD
+    'apps.master_data.country',
+    'apps.master_data.department',
+    'apps.master_data.location',
+    'apps.master_data.branch',
+
+
+
+=======
     'apps.master_data.branch',
     'apps.master_data.department',
     'apps.master_data.location',  
     'apps.master_data.country',
+>>>>>>> 7b8fbeae4402b1b1baae10b389865c31d6e88c5c
     
     
 ]

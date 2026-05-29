@@ -35,7 +35,12 @@ class Country(models.Model):
 
 =======
 from  django.db import models
+<<<<<<< HEAD
 from apps.master_data.currency.models.currency_models import Currency
+=======
+
+
+>>>>>>> 5bedb4fc78dd79be22858d46885bd0e4d45a6d72
 class Country(models.Model):
     country_id = models.AutoField(primary_key=True)
     

@@ -1,6 +1,5 @@
 from django.db import models
-from apps.master_data.branch.models.branch_models import Branch 
-from apps.master_data.department.models.department_models import Department
+
 
 class Custodian(models.Model):
     
@@ -8,7 +7,7 @@ class Custodian(models.Model):
     branch = models.ForeignKey('branch.Branch', on_delete=models.CASCADE, null=True, blank=True)
     
     custodian_id = models.AutoField(primary_key=True)
-    custodian_code = models.CharField(max_length=10)
+    
     custodian_name = models.CharField(max_length=100,null = False)
     custodian_type = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
