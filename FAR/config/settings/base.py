@@ -68,6 +68,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 
+<<<<<<< HEAD
 
 # DATABASES = {
 #     'default': {
@@ -83,6 +84,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #     }
 # }
 
+=======
+>>>>>>> c45243217a8bad0bf81b22554dcaf8f8649bfa16
 
 DATABASES = {
     'default': {
