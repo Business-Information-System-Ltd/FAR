@@ -25,20 +25,11 @@ INSTALLED_APPS = [
     'apps.workstations',
     'apps.master_data.custodian',
     'apps.master_data.currency',
-<<<<<<< HEAD
     'apps.master_data.country',
     'apps.master_data.department',
     'apps.master_data.location',
     'apps.master_data.branch',
-
-
-
-=======
-    'apps.master_data.branch',
-    'apps.master_data.department',
-    'apps.master_data.location',  
-    'apps.master_data.country',
->>>>>>> 7b8fbeae4402b1b1baae10b389865c31d6e88c5c
+    
     
     
 ]
@@ -78,24 +69,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 
-<<<<<<< HEAD
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'far',
-#         'USER': 'may',
-#         'PASSWORD': 'May@B12S0ft!',
-#         'HOST': 'bizsoft.southeastasia.cloudapp.azure.com',  
-#         'PORT': '3306',  
-#         'OPTIONS': {
-#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-#             }
-#     }
-# }
-
-=======
->>>>>>> c45243217a8bad0bf81b22554dcaf8f8649bfa16
 
 DATABASES = {
     'default': {
@@ -135,6 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 CORS_ALLOW_ALL_ORIGINS = True
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
