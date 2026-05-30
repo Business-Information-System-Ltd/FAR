@@ -1,10 +1,11 @@
 from django.db import models
-
+from apps.master_data.department.models.department_models import Department
+from apps.master_data.branch.models.branch_models import Branch
 
 class Custodian(models.Model):
     
-    department = models.ForeignKey('department.Department', on_delete=models.CASCADE, null=True,  blank=True)
-    branch = models.ForeignKey('branch.Branch', on_delete=models.CASCADE, null=True, blank=True)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True,  blank=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=True, blank=True)
     
     custodian_id = models.AutoField(primary_key=True)
     

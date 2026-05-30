@@ -40,8 +40,8 @@ urlpatterns = [
         path('locations/', include('apps.master_data.location.api.urls')),
         path('departments/', include('apps.master_data.department.api.urls')),
         path('custodians/', include('apps.master_data.custodian.api.urls')),
-        path('currencies/fields', include('apps.master_data.currency.api.urls')),
-        path('custodians/fields', include('apps.master_data.custodian.api.urls')),
+      
+        # path('custodians/fields', include('apps.master_data.custodian.api.urls')),
 
 
         
